@@ -11,13 +11,22 @@ function print(text) {
  */
 function isValid(name) {
   // проверка на отсутствие пробелов в имени и чтобы длина имени была >= 4
-  
-  if(name.indexOf(' ') === -1 && name.length >= 4){
+  if(name == null) {
+    
+    return false
+
+} else {
+  if( name.indexOf(' ') === -1 && name.length >= 4 ) {
     
     return true
 
 }
-  }
+    else {
+      return false
+    } 
+}
+  
+}
 
 function sayHello() {
   let userName = prompt('Введите ваше имя');
@@ -28,4 +37,5 @@ function sayHello() {
     print('Некорректное имя');
   }
 }
+
 
