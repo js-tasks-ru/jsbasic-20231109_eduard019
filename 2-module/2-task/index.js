@@ -1,3 +1,7 @@
 function isEmpty(obj) {
-  // ваш код...
+  // проверка на наличие свойств
+for (let key in obj) {
+  return false
+}
+return true;
 }
