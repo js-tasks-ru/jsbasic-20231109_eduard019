@@ -1,3 +1,4 @@
 function filterRange(arr, a, b) {
-  // ваш код...
+  // фильтрация элементов массива
+  return arr.filter(item => (a <= item && item <= b));
 }
