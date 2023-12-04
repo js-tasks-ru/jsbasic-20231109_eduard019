@@ -14,6 +14,18 @@
 
   <script src="./index.js"></script>
   <script>
+    function toggleText() {
+  // ваш код...
+
+  const text = document.getElementById('text');
+  document.querySelector('.toggle-text-button').addEventListener('click', function() {
+    if (text.hasAttribute('hidden')) {
+      text.removeAttribute('hidden');
+    } else {
+      text.setAttribute('hidden', true);
+    }
+  });
+}
     toggleText();
   </script>
 </body>

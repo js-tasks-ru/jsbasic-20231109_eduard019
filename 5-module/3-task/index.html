@@ -68,9 +68,53 @@
   <script src="./index.js">
   </script>
   <script>
-    if (initCarousel) {
+    function initCarousel() {
+  // ваш код...
+  var carouselInner = document.querySelector('.carousel__inner');
+  var slides = document.querySelectorAll('.carousel__slide');
+  var prevButton = document.querySelector('.carousel__arrow_left');
+  var nextButton = document.querySelector('.carousel__arrow_right');
+  var slideWidth = slides[0].offsetWidth;
+  var currentSlide = 0;
+
+  function checkButtons() {
+    if (currentSlide === 0) {
+      prevButton.style.display = 'none';
+    } else {
+      prevButton.style.display = '';
+    }
+
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = 'none';
+    } else {
+      nextButton.style.display = '';
+    }
+  }
+
+  prevButton.addEventListener('click', function() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      carouselInner.style.transform = 'translateX(' + (-slideWidth * currentSlide) + 'px)';
+      checkButtons();
+    }
+  });
+
+  nextButton.addEventListener('click', function() {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      carouselInner.style.transform = 'translateX(' + (-slideWidth * currentSlide) + 'px)';
+      checkButtons();
+    }
+  });
+
+  checkButtons();
+}
+  
+
+   if (initCarousel) {
       initCarousel();
     }
+    
   </script>
 </body>
 
